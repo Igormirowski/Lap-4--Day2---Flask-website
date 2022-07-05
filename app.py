@@ -1,10 +1,10 @@
-from flask import Flask, escape, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return"<h1 style='color:red'>Hello Igor</h1>"
+    return render_template('index.html')
 
 
 # Dynamic Route
