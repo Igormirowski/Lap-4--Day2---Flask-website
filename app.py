@@ -1,3 +1,4 @@
+from turtle import title
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -6,13 +7,15 @@ app = Flask(__name__)
 def index():
     lead = "Beth"
     trainers = ['beth', 'claire', 'romer']
-    return render_template("index.html", name=lead, names=trainers)
+    title = "Home"
+    return render_template("index.html", name=lead, names=trainers, title=title)
 
 
 # Dynamic Route
 @app.route('/students/<name>')
 def student(name):
-    return f"<h1>Profilepage for {name.capitalize()}</h1>"
+    title = "Students"
+    return f"<h1>Profilepage for {name.capitalize()}</h1>,"
 
 
 @app.route('/information')
@@ -23,7 +26,8 @@ def info():
 #signup page
 @app.route('/signup')
 def signup_form():
-    return render_template("signup.html")
+    title = "Signup"
+    return render_template("signup.html",title=title)
 
 #welcome page
 @app.route('/welcome')
@@ -36,7 +40,7 @@ def welcome():
 @app.errorhandler(404)
 def page_not_found(e):
     path = request.path
-    return render_template('error/404.html',path=path),404
+    return render_template('errors/404.html',path=path),404
 
 
 
