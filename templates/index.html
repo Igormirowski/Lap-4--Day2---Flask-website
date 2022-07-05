@@ -8,4 +8,8 @@
 
 <a href="{{ url_for('signup_form') }}">Signup for cohort</a>
 
+{% for name in names %}
+<li>{{ name | capitalize }}</li>
+{% endfor %}
+
 {% endblock %}

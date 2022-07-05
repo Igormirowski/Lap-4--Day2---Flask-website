@@ -6,7 +6,8 @@ app = Flask(__name__)
 def index():
     lead = "Beth"
     trainers = ['beth', 'claire', 'romer']
-    return render_template("index.html", name=lead, name=trainers)
+    return render_template("index.html", name=lead, names=trainers)
+
 
 # Dynamic Route
 @app.route('/students/<name>')
