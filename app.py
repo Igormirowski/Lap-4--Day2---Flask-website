@@ -23,12 +23,12 @@ def info():
 def signup_form():
     return render_template("signup.html")
 
-# #welcome page
-# @app.route('/welcome')
-# def welcome():
-#     first = request.args.get('first')
-#     last = request.args.get('last')
-#     return render_template("welcome.html", first=first, last=last)
+#welcome page
+@app.route('/welcome')
+def welcome():
+    first = request.args.get('first')
+    last = request.args.get('last')
+    return render_template("welcome.html", first=first, last=last)
 
 # #welcome page access logi data 
 
