@@ -14,7 +14,7 @@ def student(name):
 
 
 @app.route('/information')
-def student(name):
+def info():
     return "<h1>We are currently in lap4</h1>"
 
 
