@@ -32,15 +32,11 @@ def welcome():
     last = request.args.get('last')
     return render_template("welcome.html", first=first, last=last)
 
-# #welcome page access logi data 
-
-
-# # handle 404
-#  @app.errorhandler(404)
-#  def page_not_found(e)
-#  path = request.path
-#     return render_template('error/404.html',path=path),404
-
+# handle 404
+@app.errorhandler(404)
+def page_not_found(e):
+    path = request.path
+    return render_template('error/404.html',path=path),404
 
 
 
