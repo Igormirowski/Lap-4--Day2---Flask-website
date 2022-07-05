@@ -1,12 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     lead = "Beth"
-    trainers = ['beth', 'claire', 'romer']
-    return render_template("index.html", name=lead, name=trainers)
+    return render_template("index.html", name=lead)
 
 # Dynamic Route
 @app.route('/students/<name>')
