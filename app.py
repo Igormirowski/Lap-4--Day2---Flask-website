@@ -10,7 +10,13 @@ def index():
 # Dynamic Route
 @app.route('/students/<name>')
 def student(name):
-    return f"<h1 style='color:red'>Profilepage for {name.capitalize()}</h1>"
+    return f"<h1>Profilepage for {name.capitalize()}</h1>"
+
+
+@app.route('/information')
+def student(name):
+    return "<h1>We are currently in lap4</h1>"
+
 
 
 if __name__ =="__main__":
