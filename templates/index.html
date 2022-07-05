@@ -3,5 +3,9 @@
 {% block content %}
 <h1>fp course is cool stuff</h1>
 <p>{{name}}</p>
+
+<img src="{{ url_for('static', filename='img/person.png') }}" width="200" alt="fp sophie">
+
 <a href="{{ url_for('signup_form') }}">Signup for cohort</a>
+
 {% endblock %}
