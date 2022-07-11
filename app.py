@@ -1,4 +1,3 @@
-from turtle import title
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -15,9 +14,9 @@ def index():
 @app.route('/students/<name>')
 def student(name):
     title = "Students"
-    return f"<h1>Profilepage for {name.capitalize()}</h1>,"
+    return f"<h1>Profilepage for {name.capitalize()}</h1>," #capitalize is method coz its attached to sth
 
-
+# info route
 @app.route('/information')
 def info():
     return "<h1>We are currently in lap4</h1>"
@@ -42,6 +41,11 @@ def page_not_found(e):
     path = request.path
     return render_template('errors/404.html',path=path),404
 
+#handle 500
+@app.errorhandler(500)
+def page_not_found(e):
+    path = request.path
+    return render_template('errors/500.html',path=path),500
 
 
 if __name__ =="__main__":

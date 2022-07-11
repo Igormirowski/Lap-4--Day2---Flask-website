@@ -25,7 +25,7 @@ def index():
     return"<h1>Hello Igor</h1>"
 ```
 - `python app.py` (see port 4000)
-- we can add style 
+- we can add inline style 
 - add dynamic route 
 - check for dynamic value`http://localhost:4000/students/Igor`
 - create information route
